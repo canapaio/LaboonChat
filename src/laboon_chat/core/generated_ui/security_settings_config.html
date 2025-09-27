@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurazione Plugin - Impostazioni Sicurezza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .config-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .field-group {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #007bff;
+        }
+        .field-item {
+            margin-bottom: 1rem;
+        }
+        .field-description {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        .config-header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .btn-save {
+            background: #28a745;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+        }
+        .btn-reset {
+            background: #6c757d;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+        }
+        .validation-error {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .color-preview {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 2px solid #dee2e6;
+            display: inline-block;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="config-container">
+        <div class="config-header">
+            <h1><i class="bi bi-gear-fill"></i> Impostazioni Sicurezza</h1>
+            <p class="mb-0">Configurazioni di sicurezza e privacy</p>
+            <small>Versione: 1.0.0</small>
+        </div>
+        
+        <form id="configForm">
+            <div class="field-item">
+        
+        <label for="auto_logout_minutes" class="form-label">
+            Logout Automatico (minuti)
+            
+        </label>
+        
+        <input type="number" id="auto_logout_minutes" name="auto_logout_minutes" class="form-control" min="5" max="480" step="1">
+        <div class="field-description">Tempo di inattività prima del logout automatico</div>
+        </div>
+<div class="field-item">
+        
+        <label for="require_password" class="form-label">
+            Richiedi Password
+            
+        </label>
+        
+        
+            <div class="form-check">
+                <input type="checkbox" id="require_password" name="require_password" class="form-check-input">
+                <label class="form-check-label" for="require_password">Attiva</label>
+            </div>
+            
+        <div class="field-description">Richiedi password per accedere alla chat</div>
+        </div>
+<div class="field-item">
+        
+        <label for="allowed_file_types" class="form-label">
+            Tipi File Consentiti
+            
+        </label>
+        
+        <textarea id="allowed_file_types" name="allowed_file_types" class="form-control" rows="3" placeholder="Inserisci valori separati da virgola o JSON"></textarea>
+        <div class="field-description">Estensioni file permesse per upload</div>
+        </div>
+<div class="field-item">
+        
+        <label for="encryption_level" class="form-label">
+            Livello Crittografia
+            
+        </label>
+        
+        <select id="encryption_level" name="encryption_level" class="form-control">
+<option value="none">none</option>
+<option value="basic">basic</option>
+<option value="standard">standard</option>
+<option value="high">high</option>
+</select>
+        <div class="field-description">Livello di crittografia per i messaggi</div>
+        </div>
+            
+            <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-save text-white">
+                    <i class="bi bi-check-circle"></i> Salva Configurazione
+                </button>
+                <button type="button" class="btn btn-reset text-white" onclick="resetForm()">
+                    <i class="bi bi-arrow-clockwise"></i> Ripristina
+                </button>
+                <button type="button" class="btn btn-outline-primary" onclick="exportConfig()">
+                    <i class="bi bi-download"></i> Esporta
+                </button>
+                <button type="button" class="btn btn-outline-secondary" onclick="importConfig()">
+                    <i class="bi bi-upload"></i> Importa
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImport(event)">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const pluginId = 'security_settings';
+        const originalConfig = {"auto_logout_minutes": 30, "require_password": false, "allowed_file_types": ["jpg", "png", "gif", "pdf", "txt"], "encryption_level": "standard"};
+        let currentConfig = JSON.parse(JSON.stringify(originalConfig));
+        
+        
+        // Gestione form configurazione
+        document.getElementById('configForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            saveConfiguration();
+        });
+        
+        function saveConfiguration() {
+            const formData = new FormData(document.getElementById('configForm'));
+            const config = {};
+            
+            // Raccogli tutti i valori del form
+            for (let [key, value] of formData.entries()) {
+                const field = getFieldMetadata(key);
+                if (field) {
+                    config[key] = convertValue(value, field.type);
+                }
+            }
+            
+            // Valida la configurazione
+            if (validateConfiguration(config)) {
+                // Invia al backend (implementare chiamata API)
+                console.log('Configurazione da salvare:', config);
+                showNotification('Configurazione salvata con successo!', 'success');
+                currentConfig = JSON.parse(JSON.stringify(config));
+            }
+        }
+        
+        function convertValue(value, type) {
+            switch (type) {
+                case 'integer':
+                    return parseInt(value) || 0;
+                case 'number':
+                    return parseFloat(value) || 0.0;
+                case 'boolean':
+                    return value === 'true' || value === true;
+                case 'array':
+                    try {
+                        return JSON.parse(value);
+                    } catch {
+                        return value.split(',').map(s => s.trim()).filter(s => s);
+                    }
+                default:
+                    return value;
+            }
+        }
+        
+        function validateConfiguration(config) {
+            // Implementare validazione basata su schema
+            return true;
+        }
+        
+        function resetForm() {
+            if (confirm('Sei sicuro di voler ripristinare la configurazione originale?')) {
+                loadConfiguration(originalConfig);
+                showNotification('Configurazione ripristinata', 'info');
+            }
+        }
+        
+        function loadConfiguration(config) {
+            for (let [key, value] of Object.entries(config)) {
+                const element = document.getElementById(key);
+                if (element) {
+                    if (element.type === 'checkbox') {
+                        element.checked = value;
+                    } else if (element.type === 'color') {
+                        element.value = value;
+                        updateColorPreview(key, value);
+                    } else {
+                        element.value = Array.isArray(value) ? JSON.stringify(value) : value;
+                    }
+                }
+            }
+        }
+        
+        function exportConfig() {
+            const config = getCurrentConfig();
+            const blob = new Blob([JSON.stringify(config, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${pluginId}_config.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function importConfig() {
+            document.getElementById('importFile').click();
+        }
+        
+        function handleImport(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const config = JSON.parse(e.target.result);
+                        loadConfiguration(config);
+                        showNotification('Configurazione importata con successo!', 'success');
+                    } catch (error) {
+                        showNotification('Errore nel file di configurazione', 'error');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+        
+        function getCurrentConfig() {
+            const formData = new FormData(document.getElementById('configForm'));
+            const config = {};
+            for (let [key, value] of formData.entries()) {
+                const field = getFieldMetadata(key);
+                if (field) {
+                    config[key] = convertValue(value, field.type);
+                }
+            }
+            return config;
+        }
+        
+        function getFieldMetadata(fieldName) {
+            // Implementare lookup metadati campo
+            return {type: 'string'};
+        }
+        
+        function updateColorPreview(fieldName, color) {
+            const preview = document.getElementById(fieldName + '_preview');
+            if (preview) {
+                preview.style.backgroundColor = color;
+            }
+        }
+        
+        function showNotification(message, type) {
+            // Implementare sistema notifiche
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+        
+        // Carica configurazione iniziale
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfiguration(currentConfig);
+        });
+        
+    </script>
+</body>
+</html>

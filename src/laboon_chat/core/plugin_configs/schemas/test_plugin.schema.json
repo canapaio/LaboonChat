@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Configurazione Plugin di Test",
+  "description": "Plugin per testare il sistema configurazioni",
+  "properties": {
+    "server_url": {
+      "type": "string",
+      "title": "URL Server",
+      "description": "Indirizzo del server di destinazione",
+      "default": "https://api.example.com",
+      "pattern": "https?://.*"
+    },
+    "max_connections": {
+      "type": "integer",
+      "title": "Connessioni Massime",
+      "description": "Numero massimo di connessioni simultanee",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "enable_logging": {
+      "type": "boolean",
+      "title": "Abilita Logging",
+      "description": "Attiva la registrazione degli eventi",
+      "default": true
+    },
+    "log_level": {
+      "type": "string",
+      "title": "Livello Log",
+      "description": "Livello di dettaglio dei log",
+      "enum": [
+        "DEBUG",
+        "INFO",
+        "WARNING",
+        "ERROR"
+      ],
+      "default": "INFO"
+    },
+    "api_timeout": {
+      "type": "number",
+      "title": "Timeout API (secondi)",
+      "description": "Timeout per le chiamate API",
+      "default": 30.0,
+      "minimum": 1.0,
+      "maximum": 300.0
+    },
+    "theme_color": {
+      "type": "string",
+      "title": "Colore Tema",
+      "description": "Colore principale dell'interfaccia",
+      "default": "#28a745",
+      "ui:widget": "color"
+    },
+    "backup_directories": {
+      "type": "array",
+      "title": "Directory Backup",
+      "description": "Lista delle directory per i backup",
+      "default": [
+        "/backup1",
+        "/backup2"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "server_url"
+  ],
+  "ui:meta": {
+    "plugin_id": "test_plugin",
+    "plugin_name": "Plugin di Test",
+    "version": "1.0.0",
+    "groups": {}
+  }
+}

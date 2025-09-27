@@ -1,0 +1,73 @@
+{
+  "plugin_id": "security_settings",
+  "plugin_name": "Impostazioni Sicurezza",
+  "version": "1.0.0",
+  "description": "Configurazioni di sicurezza e privacy",
+  "generated_at": "2025-09-27T10:04:49.736594",
+  "groups": [],
+  "fields": [
+    {
+      "name": "auto_logout_minutes",
+      "type": "integer",
+      "title": "Logout Automatico (minuti)",
+      "description": "Tempo di inattività prima del logout automatico",
+      "default": 30,
+      "required": false,
+      "widget": null,
+      "enum_values": null,
+      "min_value": 5,
+      "max_value": 480,
+      "pattern": null
+    },
+    {
+      "name": "require_password",
+      "type": "boolean",
+      "title": "Richiedi Password",
+      "description": "Richiedi password per accedere alla chat",
+      "default": false,
+      "required": false,
+      "widget": null,
+      "enum_values": null,
+      "min_value": null,
+      "max_value": null,
+      "pattern": null
+    },
+    {
+      "name": "allowed_file_types",
+      "type": "array",
+      "title": "Tipi File Consentiti",
+      "description": "Estensioni file permesse per upload",
+      "default": [
+        "jpg",
+        "png",
+        "gif",
+        "pdf",
+        "txt"
+      ],
+      "required": false,
+      "widget": null,
+      "enum_values": null,
+      "min_value": null,
+      "max_value": null,
+      "pattern": null
+    },
+    {
+      "name": "encryption_level",
+      "type": "enum",
+      "title": "Livello Crittografia",
+      "description": "Livello di crittografia per i messaggi",
+      "default": "standard",
+      "required": false,
+      "widget": null,
+      "enum_values": [
+        "none",
+        "basic",
+        "standard",
+        "high"
+      ],
+      "min_value": null,
+      "max_value": null,
+      "pattern": null
+    }
+  ]
+}

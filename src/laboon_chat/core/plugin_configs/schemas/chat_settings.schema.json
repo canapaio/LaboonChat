@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Configurazione Impostazioni Chat",
+  "description": "Configurazioni generali per la chat",
+  "properties": {
+    "max_message_length": {
+      "type": "integer",
+      "title": "Lunghezza Massima Messaggio",
+      "description": "Numero massimo di caratteri per messaggio",
+      "default": 1000,
+      "minimum": 100,
+      "maximum": 5000
+    },
+    "enable_emoji": {
+      "type": "boolean",
+      "title": "Abilita Emoji",
+      "description": "Permetti l'uso di emoji nei messaggi",
+      "default": true
+    },
+    "theme_color": {
+      "type": "string",
+      "title": "Colore Tema",
+      "description": "Colore principale dell'interfaccia",
+      "default": "#007bff",
+      "ui:widget": "color"
+    },
+    "notification_sound": {
+      "type": "string",
+      "title": "Suono Notifica",
+      "description": "Suono per le notifiche",
+      "enum": [
+        "default",
+        "bell",
+        "chime",
+        "none"
+      ],
+      "default": "default"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "max_message_length"
+  ],
+  "ui:meta": {
+    "plugin_id": "chat_settings",
+    "plugin_name": "Impostazioni Chat",
+    "version": "1.0.0",
+    "groups": {}
+  }
+}

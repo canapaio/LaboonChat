@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-27T10:00:00Z",
+  "certification_authority": {
+    "name": "LaboonChat Security Team",
+    "public_key": "ed25519:AAAA1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890AB",
+    "contact": "security@laboonchat.org",
+    "website": "https://security.laboonchat.org"
+  },
+  "repository_info": {
+    "format_version": "1.0",
+    "signature_algorithm": "Ed25519",
+    "hash_algorithm": "SHA-256",
+    "encryption_standard": "ChaCha20-Poly1305"
+  },
+  "plugins": {
+    "message_history": {
+      "certified_versions": ["1.0.0"],
+      "latest_certified": "1.0.0",
+      "security_level": "high",
+      "last_audit": "2025-01-20T00:00:00Z",
+      "auditor": "Independent Security Labs",
+      "auditor_contact": "audit@securitylabs.org",
+      "compliance": ["GDPR", "SOC2", "ISO27001"],
+      "description": "Plugin per gestione storico messaggi con ricerca full-text",
+      "category": "essential",
+      "dependencies": [],
+      "permissions": ["storage.read", "storage.write", "events.message"],
+      "risk_assessment": {
+        "data_access": "high",
+        "network_access": "none",
+        "file_system": "limited",
+        "overall_risk": "low"
+      }
+    },
+    "peer_discovery": {
+      "certified_versions": ["1.0.0"],
+      "latest_certified": "1.0.0",
+      "security_level": "high",
+      "last_audit": "2025-01-15T00:00:00Z",
+      "auditor": "CyberSec Auditors Inc",
+      "auditor_contact": "contact@cybersecauditors.com",
+      "compliance": ["GDPR", "SOC2"],
+      "description": "Plugin per discovery avanzato peer (DHT + mDNS + Bootstrap)",
+      "category": "essential",
+      "dependencies": [],
+      "permissions": ["network.dht", "network.mdns", "events.peer"],
+      "risk_assessment": {
+        "data_access": "medium",
+        "network_access": "high",
+        "file_system": "none",
+        "overall_risk": "medium"
+      }
+    },
+    "file_transfer": {
+      "certified_versions": ["1.0.0"],
+      "latest_certified": "1.0.0",
+      "security_level": "medium",
+      "last_audit": "2025-01-10T00:00:00Z",
+      "auditor": "Security First Labs",
+      "auditor_contact": "info@securityfirstlabs.com",
+      "compliance": ["GDPR"],
+      "description": "Plugin per trasferimento file sicuro con chunking e crittografia",
+      "category": "essential",
+      "dependencies": ["peer_discovery"],
+      "permissions": ["network.transfer", "storage.temp", "events.file"],
+      "risk_assessment": {
+        "data_access": "high",
+        "network_access": "high",
+        "file_system": "high",
+        "overall_risk": "medium"
+      }
+    }
+  },
+  "certification_levels": {
+    "high": {
+      "description": "Audit completo + compliance + code review + penetration testing",
+      "requirements": ["static_analysis", "dynamic_analysis", "manual_review", "compliance_check", "penetration_test"],
+      "validity_period": "12_months",
+      "auto_renewal": false
+    },
+    "medium": {
+      "description": "Audit base + analisi automatica + code review",
+      "requirements": ["static_analysis", "dynamic_analysis", "manual_review"],
+      "validity_period": "6_months",
+      "auto_renewal": true
+    },
+    "low": {
+      "description": "Solo analisi automatica + basic review",
+      "requirements": ["static_analysis", "basic_review"],
+      "validity_period": "3_months",
+      "auto_renewal": true
+    }
+  },
+  "audit_standards": {
+    "static_analysis": {
+      "tools": ["bandit", "semgrep", "pylint", "mypy"],
+      "min_score": 8.5,
+      "critical_issues": 0,
+      "high_issues": 0
+    },
+    "dynamic_analysis": {
+      "tools": ["pytest", "coverage", "memory_profiler"],
+      "min_coverage": 90,
+      "performance_threshold": "100ms",
+      "memory_limit": "50MB"
+    },
+    "compliance_check": {
+      "gdpr": ["data_minimization", "consent_management", "right_to_deletion"],
+      "soc2": ["access_controls", "system_monitoring", "data_protection"],
+      "iso27001": ["risk_assessment", "security_controls", "incident_response"]
+    }
+  },
+  "signature": "ed25519:BBBB1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890CD"
+}

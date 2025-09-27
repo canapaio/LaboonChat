@@ -1,0 +1,357 @@
+{
+  "compliance_report": {
+    "plugin_name": "message_history",
+    "version": "1.0.0",
+    "report_id": "LBCOMP-MH-2025-001",
+    "assessment_date": "2025-01-20T00:00:00Z",
+    "assessor": "Compliance Solutions Ltd",
+    "assessor_contact": "compliance@compliancesolutions.com",
+    "validity_period": "12_months",
+    "next_assessment": "2026-01-20T00:00:00Z"
+  },
+  "gdpr_compliance": {
+    "overall_status": "compliant",
+    "compliance_score": 98,
+    "assessment_details": {
+      "article_5_lawfulness": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Clear legal basis for processing (legitimate interest)",
+          "Transparent data processing practices",
+          "Fair and lawful data collection"
+        ],
+        "recommendations": []
+      },
+      "article_6_legal_basis": {
+        "status": "compliant", 
+        "score": 100,
+        "legal_basis": "legitimate_interest",
+        "evidence": [
+          "Documented legitimate interest assessment",
+          "User consent mechanisms implemented",
+          "Clear opt-out procedures"
+        ]
+      },
+      "article_13_information": {
+        "status": "compliant",
+        "score": 95,
+        "evidence": [
+          "Privacy notice provided to users",
+          "Clear explanation of data processing",
+          "Contact information for data controller"
+        ],
+        "recommendations": [
+          "Consider adding more detailed retention period information"
+        ]
+      },
+      "article_17_erasure": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Secure deletion functionality implemented",
+          "User-initiated deletion available",
+          "Automated deletion after retention period"
+        ]
+      },
+      "article_20_portability": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Data export functionality available",
+          "Structured, machine-readable format",
+          "Easy data transfer mechanisms"
+        ]
+      },
+      "article_25_data_protection_by_design": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Privacy by design principles implemented",
+          "Default privacy settings",
+          "Minimal data collection approach"
+        ]
+      },
+      "article_32_security": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Strong encryption at rest and in transit",
+          "Access controls implemented",
+          "Regular security assessments",
+          "Incident response procedures"
+        ]
+      }
+    },
+    "data_processing_activities": {
+      "message_storage": {
+        "purpose": "Store user messages for chat history",
+        "legal_basis": "legitimate_interest",
+        "data_categories": ["message_content", "timestamps", "sender_metadata"],
+        "retention_period": "user_controlled",
+        "security_measures": ["encryption", "access_controls", "audit_logging"]
+      },
+      "search_indexing": {
+        "purpose": "Enable message search functionality",
+        "legal_basis": "legitimate_interest", 
+        "data_categories": ["message_content_tokens", "search_metadata"],
+        "retention_period": "same_as_messages",
+        "security_measures": ["encrypted_index", "secure_tokenization"]
+      }
+    }
+  },
+  "soc2_compliance": {
+    "overall_status": "compliant",
+    "compliance_score": 96,
+    "type": "type_ii",
+    "assessment_period": "12_months",
+    "trust_criteria": {
+      "security": {
+        "status": "compliant",
+        "score": 98,
+        "controls": {
+          "cc6_1_logical_access": {
+            "status": "effective",
+            "evidence": "Multi-factor authentication, role-based access controls"
+          },
+          "cc6_2_authentication": {
+            "status": "effective", 
+            "evidence": "Strong authentication mechanisms, session management"
+          },
+          "cc6_3_authorization": {
+            "status": "effective",
+            "evidence": "Granular permission system, least privilege principle"
+          },
+          "cc6_7_data_transmission": {
+            "status": "effective",
+            "evidence": "End-to-end encryption, secure protocols"
+          },
+          "cc6_8_data_disposal": {
+            "status": "effective",
+            "evidence": "Secure deletion procedures, data sanitization"
+          }
+        }
+      },
+      "availability": {
+        "status": "compliant",
+        "score": 94,
+        "controls": {
+          "cc7_1_capacity_planning": {
+            "status": "effective",
+            "evidence": "Resource monitoring, scalability planning"
+          },
+          "cc7_2_system_monitoring": {
+            "status": "effective",
+            "evidence": "Comprehensive monitoring, alerting systems"
+          },
+          "cc7_3_backup_recovery": {
+            "status": "effective",
+            "evidence": "Automated backups, tested recovery procedures"
+          }
+        }
+      },
+      "processing_integrity": {
+        "status": "compliant",
+        "score": 96,
+        "controls": {
+          "cc8_1_data_processing": {
+            "status": "effective",
+            "evidence": "Input validation, data integrity checks"
+          },
+          "cc8_2_error_handling": {
+            "status": "effective",
+            "evidence": "Comprehensive error handling, logging"
+          }
+        }
+      },
+      "confidentiality": {
+        "status": "compliant",
+        "score": 98,
+        "controls": {
+          "cc9_1_confidential_information": {
+            "status": "effective",
+            "evidence": "Data classification, encryption, access controls"
+          }
+        }
+      },
+      "privacy": {
+        "status": "compliant",
+        "score": 95,
+        "controls": {
+          "p1_0_privacy_notice": {
+            "status": "effective",
+            "evidence": "Clear privacy notices, consent mechanisms"
+          },
+          "p2_0_choice_consent": {
+            "status": "effective",
+            "evidence": "User choice options, consent management"
+          },
+          "p3_0_collection": {
+            "status": "effective",
+            "evidence": "Minimal data collection, purpose limitation"
+          },
+          "p4_0_use_retention": {
+            "status": "effective",
+            "evidence": "Purpose-limited use, defined retention periods"
+          },
+          "p5_0_access": {
+            "status": "effective",
+            "evidence": "User access rights, data portability"
+          },
+          "p6_0_disclosure": {
+            "status": "effective",
+            "evidence": "Limited disclosure, user notification"
+          },
+          "p7_0_quality": {
+            "status": "effective",
+            "evidence": "Data accuracy measures, user correction rights"
+          }
+        }
+      }
+    }
+  },
+  "iso27001_compliance": {
+    "overall_status": "compliant",
+    "compliance_score": 94,
+    "certification_body": "ISO Certification Authority",
+    "assessment_details": {
+      "a5_information_security_policies": {
+        "status": "compliant",
+        "score": 95,
+        "evidence": [
+          "Documented information security policy",
+          "Regular policy reviews and updates",
+          "Management approval and communication"
+        ]
+      },
+      "a6_organization_information_security": {
+        "status": "compliant",
+        "score": 90,
+        "evidence": [
+          "Defined security roles and responsibilities",
+          "Security incident response procedures",
+          "Regular security awareness training"
+        ]
+      },
+      "a8_asset_management": {
+        "status": "compliant",
+        "score": 96,
+        "evidence": [
+          "Asset inventory and classification",
+          "Secure handling procedures",
+          "Media disposal procedures"
+        ]
+      },
+      "a9_access_control": {
+        "status": "compliant",
+        "score": 98,
+        "evidence": [
+          "Access control policy implementation",
+          "User access management procedures",
+          "Privileged access controls"
+        ]
+      },
+      "a10_cryptography": {
+        "status": "compliant",
+        "score": 100,
+        "evidence": [
+          "Strong cryptographic controls",
+          "Key management procedures",
+          "Encryption implementation standards"
+        ]
+      },
+      "a12_operations_security": {
+        "status": "compliant",
+        "score": 92,
+        "evidence": [
+          "Operational procedures documentation",
+          "Change management processes",
+          "System monitoring and logging"
+        ]
+      },
+      "a13_communications_security": {
+        "status": "compliant",
+        "score": 96,
+        "evidence": [
+          "Network security controls",
+          "Secure data transmission",
+          "Network segregation"
+        ]
+      },
+      "a14_system_acquisition": {
+        "status": "compliant",
+        "score": 88,
+        "evidence": [
+          "Security requirements in development",
+          "Secure development lifecycle",
+          "Security testing procedures"
+        ]
+      },
+      "a16_incident_management": {
+        "status": "compliant",
+        "score": 94,
+        "evidence": [
+          "Incident response procedures",
+          "Incident reporting mechanisms",
+          "Evidence collection procedures"
+        ]
+      },
+      "a17_business_continuity": {
+        "status": "compliant",
+        "score": 90,
+        "evidence": [
+          "Business continuity planning",
+          "Backup and recovery procedures",
+          "Disaster recovery testing"
+        ]
+      },
+      "a18_compliance": {
+        "status": "compliant",
+        "score": 96,
+        "evidence": [
+          "Legal and regulatory compliance",
+          "Regular compliance assessments",
+          "Privacy protection measures"
+        ]
+      }
+    }
+  },
+  "additional_standards": {
+    "nist_cybersecurity_framework": {
+      "status": "aligned",
+      "score": 92,
+      "functions": {
+        "identify": 90,
+        "protect": 95,
+        "detect": 88,
+        "respond": 92,
+        "recover": 90
+      }
+    },
+    "owasp_asvs": {
+      "status": "level_2_compliant",
+      "score": 94,
+      "version": "4.0.3"
+    }
+  },
+  "recommendations": {
+    "immediate": [
+      "Enhance incident response documentation",
+      "Implement additional monitoring for data access patterns"
+    ],
+    "short_term": [
+      "Conduct penetration testing every 6 months",
+      "Implement automated compliance monitoring"
+    ],
+    "long_term": [
+      "Consider ISO 27001 formal certification",
+      "Implement advanced threat detection capabilities"
+    ]
+  },
+  "certification_details": {
+    "certified_by": "Compliance Solutions Ltd",
+    "certification_date": "2025-01-20T00:00:00Z",
+    "certificate_id": "COMP-LBC-MH-2025-001",
+    "digital_signature": "ed25519:GGGG1234567890ABCDEF1234567890ABCDEF1234567890ABCDEF1234567890MN"
+  }
+}

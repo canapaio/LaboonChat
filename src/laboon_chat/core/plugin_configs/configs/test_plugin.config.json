@@ -1,0 +1,12 @@
+{
+  "server_url": "https://test.example.com",
+  "max_connections": 25,
+  "enable_logging": false,
+  "log_level": "INFO",
+  "api_timeout": 30.0,
+  "theme_color": "#28a745",
+  "backup_directories": [
+    "/backup1",
+    "/backup2"
+  ]
+}

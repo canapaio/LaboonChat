@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Configurazione Protezione Minori",
+  "description": "Sistema semplificato di protezione minori con notifiche email periodiche",
+  "properties": {
+    "is_minor": {
+      "type": "boolean",
+      "title": "Sono minorenne",
+      "description": "Indica se l'utente è minorenne (da configurare durante la creazione dell'identità)",
+      "default": false
+    },
+    "enabled": {
+      "type": "boolean",
+      "title": "Abilita Protezione Minori",
+      "description": "Attiva il sistema di notifiche email periodiche",
+      "default": false
+    },
+    "interval_minutes": {
+      "type": "integer",
+      "title": "Intervallo Notifiche (minuti)",
+      "description": "Frequenza di invio delle email di riepilogo",
+      "default": 60,
+      "minimum": 15,
+      "maximum": 1440
+    },
+    "parent_email": {
+      "type": "string",
+      "title": "Email Genitore/Tutore",
+      "description": "Indirizzo email per ricevere i riepiloghi di utilizzo",
+      "default": ""
+    },
+    "user_name": {
+      "type": "string",
+      "title": "Nome Utente",
+      "description": "Nome da includere nelle notifiche email",
+      "default": ""
+    },
+    "smtp_server": {
+      "type": "string",
+      "title": "Server SMTP",
+      "description": "Server email per l'invio delle notifiche",
+      "default": "localhost"
+    },
+    "smtp_port": {
+      "type": "integer",
+      "title": "Porta SMTP",
+      "description": "Porta del server SMTP",
+      "default": 587,
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "smtp_username": {
+      "type": "string",
+      "title": "Username SMTP",
+      "description": "Nome utente per autenticazione SMTP (opzionale)",
+      "default": ""
+    },
+    "smtp_password": {
+      "type": "string",
+      "title": "Password SMTP",
+      "description": "Password per autenticazione SMTP (opzionale)",
+      "default": "",
+      "ui:widget": "password"
+    }
+  },
+  "additionalProperties": false,
+  "ui:meta": {
+    "plugin_id": "minor_protection",
+    "plugin_name": "Protezione Minori",
+    "version": "1.0.0",
+    "groups": {}
+  }
+}
