@@ -1,0 +1,12 @@
+{
+  "tests/test_application.py": true,
+  "tests/test_config_loader.py": true,
+  "tests/test_crypto_utils.py": true,
+  "tests/test_integration_e2e.py": true,
+  "tests/test_interface_plugins.py": true,
+  "tests/test_logger.py": true,
+  "tests/test_messaging_plugins.py": true,
+  "tests/test_plugin_manager.py": true,
+  "tests/test_real_world_scenarios.py": true,
+  "tests/test_security_plugins.py": true
+}

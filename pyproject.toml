@@ -3,48 +3,43 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "laboon-chat"
-version = "0.1.0-alpha"
-description = "Secure P2P Messaging Platform - Faithful connections across digital oceans"
+name = "laboon-chat2"
+version = "2.0.0"
+description = "LaboonChat v2 - Modular P2P Secure Messaging"
 readme = "README.md"
-license = {text = "GPL-3.0"}
+license = {text = "MIT"}
 authors = [
-    {name = "Torrent-MSG Team", email = "team@laboon-chat.org"}
-]
-maintainers = [
-    {name = "Torrent-MSG Team", email = "team@laboon-chat.org"}
-]
-keywords = [
-    "p2p", "messaging", "chat", "secure", "privacy", 
-    "decentralized", "encryption", "torrent", "laboon"
+    {name = "LaboonChat Team", email = "team@laboonchat.org"}
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
-    "Topic :: Communications :: Chat",
-    "Topic :: Security :: Cryptography",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Security :: Cryptography",
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "asyncio-mqtt>=0.16.1",
     "cryptography>=41.0.0",
-    "aiohttp>=3.9.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
     "websockets>=12.0",
+    "aiofiles>=23.2.1",
     "pydantic>=2.5.0",
-    "click>=8.1.0",
-    "aiodns>=3.1.0",
-    "aiofiles>=23.2.0",
-    "bcrypt>=4.1.0",
-    "PyJWT>=2.8.0",
-    "jinja2>=3.1.0",
-    "structlog>=23.2.0",
-    "rich>=13.6.0",
+    "python-multipart>=0.0.6",
+    "jinja2>=3.1.2",
+    "libtorrent>=2.0.9",
+    "asyncio-mqtt>=0.16.1",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "click>=8.1.7",
+    "rich>=13.7.0",
+    "typer>=0.9.0",
 ]
 
 [project.optional-dependencies]
@@ -53,43 +48,31 @@ dev = [
     "pytest-asyncio>=0.21.0",
     "pytest-cov>=4.1.0",
     "black>=23.9.0",
+    "isort>=5.12.0",
     "flake8>=6.1.0",
     "mypy>=1.6.0",
     "pre-commit>=3.5.0",
 ]
-docs = [
-    "sphinx>=7.2.0",
-    "sphinx-rtd-theme>=1.3.0",
-]
-performance = [
-    "uvloop>=0.19.0",
-    "orjson>=3.9.0",
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.12.0",
+    "httpx>=0.25.0",
 ]
 
 [project.scripts]
-laboon-chat = "laboon_chat.launcher.laboon_launcher:main"
-laboon = "laboon_chat.launcher.laboon_launcher:main"
-lc = "laboon_chat.launcher.laboon_launcher:main"
+laboon-chat2 = "laboon_chat2.launcher:main"
+laboon2-dev = "laboon_chat2.dev:dev_server"
 
 [project.urls]
-Homepage = "https://github.com/torrent-msg/LaboonChat"
-Repository = "https://github.com/torrent-msg/LaboonChat"
-Documentation = "https://laboon-chat.readthedocs.io/"
-"Bug Reports" = "https://github.com/torrent-msg/LaboonChat/issues"
+Homepage = "https://github.com/laboonchat/LaboonChat2"
+Documentation = "https://docs.laboonchat.org"
+Repository = "https://github.com/laboonchat/LaboonChat2"
+Issues = "https://github.com/laboonchat/LaboonChat2/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.package-data]
-laboon_chat = [
-    "ui/templates/*.html",
-    "ui/static/css/*.css", 
-    "ui/static/js/*.js",
-    "config/*.json",
-    "config/*.yaml",
-]
-
-# Black configuration
 [tool.black]
 line-length = 88
 target-version = ['py39']
@@ -108,7 +91,11 @@ extend-exclude = '''
 )/
 '''
 
-# MyPy configuration
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
 [tool.mypy]
 python_version = "3.9"
 warn_return_any = true
@@ -124,27 +111,37 @@ warn_no_return = true
 warn_unreachable = true
 strict_equality = true
 
-# Pytest configuration
 [tool.pytest.ini_options]
-minversion = "7.0"
-addopts = "-ra -q --strict-markers --strict-config"
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+    "--tb=short",
+    "--cov=laboon_chat2",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
     "integration: marks tests as integration tests",
     "unit: marks tests as unit tests",
+    "security: marks tests as security-related",
+    "plugin: marks tests as plugin-related",
 ]
+asyncio_mode = "auto"
 
-# Coverage configuration
 [tool.coverage.run]
-source = ["src"]
+source = ["src/laboon_chat2"]
 omit = [
     "*/tests/*",
     "*/test_*",
     "*/__pycache__/*",
+    "*/migrations/*",
 ]
 
 [tool.coverage.report]

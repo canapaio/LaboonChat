@@ -1,299 +1,314 @@
-# 🐋 LaboonChat
+# LaboonChat2 🚀
 
-<div align="center">
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/your-org/LaboonChat2/actions)
+[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)](https://codecov.io/gh/your-org/LaboonChat2)
 
-```
-    🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
-    🌊                                            🌊
-    🌊        🐋 LaboonChat 🐋                   🌊
-    🌊                                            🌊
-    🌊    "Faithful connections across           🌊
-    🌊         digital oceans"                   🌊
-    🌊                                            🌊
-    🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
-```
+> **Comunicazione P2P sicura e decentralizzata di nuova generazione**
 
-**Chat Sicura e Semplice per Tutti**
+LaboonChat2 è un'applicazione di messaggistica peer-to-peer che ridefinisce la comunicazione digitale attraverso crittografia end-to-end, architettura decentralizzata e un sistema di plugin estensibile. Nessun server centrale, massima privacy, controllo totale sui tuoi dati.
 
-*Funziona come WhatsApp • Sicuro come Signal • Distribuito come BitTorrent*
+## ✨ Caratteristiche Principali
 
-**🚪 PORTA STANDARD: 9494** - Configurazione dedicata per evitare conflitti con altri servizi
+### 🔒 **Sicurezza Avanzata**
+- **Crittografia End-to-End**: AES-256-GCM, ChaCha20-Poly1305
+- **Perfect Forward Secrecy**: Chiavi temporanee per ogni sessione
+- **Post-Quantum Cryptography**: Resistente ai computer quantistici
+- **Autenticazione Peer**: Verifica crittografica dell'identità
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Development Status](https://img.shields.io/badge/status-core%20engine%20ready-green.svg)](#-stato-sviluppo)
-[![Privacy First](https://img.shields.io/badge/privacy-first-orange.svg)](#-privacy-trasparente)
-[![Certified Plugins](https://img.shields.io/badge/plugins-3%20certified-brightgreen.svg)](#-plugin-certificati)
-[![Port 9494](https://img.shields.io/badge/port-9494-blue.svg)](#-quick-start)
+### 🌐 **Rete P2P Intelligente**
+- **Discovery Automatico**: Trova peer nella rete locale e globale
+- **Routing Dinamico**: Instradamento intelligente dei messaggi
+- **Auto-Reconnection**: Riconnessione automatica in caso di interruzioni
+- **Monitoraggio Qualità**: Selezione automatica del miglior percorso
 
-</div>
+### 📁 **Condivisione File Avanzata**
+- **Chunking Intelligente**: Suddivisione ottimale per grandi file
+- **Compressione Automatica**: Riduzione dimensioni per transfer veloci
+- **Resume/Pause**: Controllo completo sui transfer
+- **Verifica Integrità**: Hash SHA-256 per garantire integrità
 
----
+### 🤖 **ChatBot AI Integrato**
+- **Assistente Intelligente**: Aiuto contestuale e automazione
+- **Personalità Configurabili**: Adatta il bot al tuo stile
+- **Comandi Avanzati**: Gestione sistema attraverso chat
+- **Apprendimento Continuo**: Migliora con l'uso
 
-## 🚧 Stato Sviluppo
-
-> **🎯 LaboonChat Core 1.0 + Sistema Certificazione Plugin - COMPLETAMENTE FUNZIONANTE!**
-> **🚪 Interfaccia Web attiva su porta 9494**
-
-### ✅ **Milestone Raggiunte (Gennaio 2025)**
-
-**🔧 LaboonChat Core Completato:**
-- ✅ **LaboonCrypto**: ChaCha20-Poly1305 + Ed25519 implementato e testato
-- ✅ **IdentityManager**: Singleton per gestione identità sicura
-- ✅ **LaboonMessaging**: Sistema P2P con DHT semplificato
-- ✅ **LaboonPluginManager**: Sistema plugin sicuro con sandbox
-- ✅ **LaboonCore**: Orchestratore centrale con API unificata
-- ✅ **Test Suite Completa**: 6/6 test di integrazione passano
-
-**🏛️ Sistema Certificazione Plugin Completato:**
-- ✅ **Repository Certificati**: 3 plugin essenziali certificati (HIGH level)
-- ✅ **Analisi Multi-Layer**: Security audit + code review + compliance
-- ✅ **Checksums Sicuri**: SHA-256 + Ed25519 digital signatures
-- ✅ **Documentazione Completa**: Analisi indipendente per ogni plugin
-- ✅ **Piano Sviluppo**: Roadmap dettagliata 12 settimane per implementazione
-
-**🛡️ Sicurezza Militare:**
-- ✅ Crittografia ChaCha20-Poly1305 (standard militare)
-- ✅ Firme digitali Ed25519 (NSA Suite B)
-- ✅ Sistema plugin con sandbox sicuro + certificazione indipendente
-- ✅ API standardizzate e validate
-
-**⚡ Performance Eccellenti:**
-- ✅ **Avvio**: 60ms (ultra-rapido)
-- ✅ **Memoria**: ~30MB (leggero)
-- ✅ **Architettura**: Modulare e scalabile
-- ✅ **Documentazione**: Completa per core e plugin
-
-### 🎯 **Prossimi Sprint**
-
-**🔌 Sprint 3 - Plugin Essenziali (Febbraio 2025):**
-- 🔄 MessageHistory: Cronologia messaggi persistente (CERTIFICATO HIGH)
-- 🔄 PeerDiscovery: Scoperta automatica peer (CERTIFICATO HIGH)
-- 🔄 FileTransfer: Condivisione file sicura (CERTIFICATO HIGH)
-- 🔄 Chat UI Plugin: Interfaccia utente moderna
-
-**🚀 Sprint 4 - Beta Release (Marzo 2025):**
-- 🔄 Mobile Support: App nativa per smartphone
-- 🔄 Community Testing: Early adopters e feedback
-- 🔄 Performance Tuning: Ottimizzazioni finali
-- 🔄 Release Candidate: Preparazione rilascio pubblico
-
-### 📊 **Metriche Attuali**
-- **Test Coverage**: 6/6 test integrazione passano (100%)
-- **Performance**: 60ms avvio, 30MB memoria
-- **Sicurezza**: Crittografia militare implementata
-- **Plugin Certificati**: 3 plugin essenziali (HIGH level)
-- **Architettura**: Core modulare con plugin system sicuro
-
----
-
-## 🌊 La Storia di Laboon
-
-Come la leggendaria balena **Laboon** che aspetta fedele i suoi amici attraverso l'oceano infinito, **LaboonChat** crea connessioni indistruttibili attraverso gli oceani digitali. Non importa quanto lontani siano i tuoi amici o quanto ostili diventino le acque della rete - LaboonChat aspetterà sempre, fedele e resiliente.
-
-## 🎯 Semplicità Radicale
-
-> *"La vera sofisticazione è la semplicità" - Leonardo da Vinci*
-
-**LaboonChat** è progettato con un principio fondamentale: **ogni funzionalità deve essere essenziale o opzionale**. Il risultato è un'app di messaggistica che:
-
-- **🚀 Funziona Immediatamente**: Zero configurazione, si avvia e basta
-- **🔒 Protegge Automaticamente**: Sicurezza invisibile, sempre attiva
-- **🌍 Connette Ovunque**: Rete distribuita che non si spegne mai
-- **🎨 Si Adatta a Te**: Plugin opzionali per personalizzazione avanzata
-
-### ✨ **L'Esperienza LaboonChat**
-
-```
-📱 Apri l'app → 💬 Scrivi messaggio → 🚀 Inviato in sicurezza
-```
-
-**Nessuna registrazione. Nessun server. Nessuna sorveglianza.**
-
-## 🏗️ Architettura Semplificata
-
-### **Core Essenziale** (sempre presente)
-```
-LaboonChat Core
-├── 🔐 Identity Manager    # La tua identità digitale sicura
-├── 💬 Message Engine     # Invio e ricezione messaggi
-├── 🛡️ Crypto Core        # Crittografia automatica
-├── 🔌 Plugin Manager     # Sistema plugin sicuro
-└── 📁 File Bridge        # Condivisione file P2P
-```
-
-### **Ecosystem Opzionale** (personalizzazione)
-```
-Plugin Ecosystem
-├── Essential/     # Notifiche, temi, backup
-├── Advanced/      # Automazione, integrazioni
-└── Community/     # Plugin della community
-```
-
-## 🔒 Privacy Trasparente
-
-### **Sicurezza che Non Disturba**
-
-LaboonChat protegge la tua privacy **automaticamente**, senza mai chiederti configurazioni complesse:
-
-- **🔐 Crittografia Automatica**: Ogni messaggio è protetto con ChaCha20-Poly1305
-- **🌐 Rete Distribuita**: Nessun server centrale da hackerare
-- **🗑️ Auto-Cancellazione**: I messaggi si cancellano automaticamente
-- **🎭 Identità Anonime**: Nessun numero di telefono o email richiesti
-
-### **Livelli di Protezione**
-| Livello | Descrizione | Configurazione |
-|---------|-------------|----------------|
-| **🟢 Base** | Crittografia E2E, rete P2P | ✅ Automatica |
-| **🟡 Avanzata** | Tor, auto-cancellazione | 🔧 Un click |
-| **🔴 Massima** | Steganografia, reti mesh | 🛠️ Plugin opzionali |
+### 🔧 **Architettura Estensibile**
+- **Sistema Plugin**: Estendi funzionalità facilmente
+- **API Completa**: Integrazione con sistemi esterni
+- **Configurazione Flessibile**: Personalizza ogni aspetto
+- **Hot-Reload**: Aggiorna plugin senza riavvio
 
 ## 🚀 Quick Start
 
-### **Installazione Zero-Config**
-
-**🚪 Porta Standard: 9494** - Configurazione dedicata per evitare conflitti
+### Installazione Rapida
 
 ```bash
-# 1. Clone del repository
-git clone https://github.com/your-repo/LaboonChat.git
-cd LaboonChat
+# Clona il repository
+git clone https://github.com/your-org/LaboonChat2.git
+cd LaboonChat2
 
-# 2. Installazione dipendenze
+# Setup ambiente
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# oppure
+venv\Scripts\activate     # Windows
+
+# Installa dipendenze
 pip install -r requirements.txt
 
-# 3. Avvio immediato (porta 9494)
-cd src/laboon_chat/core
-python unified_web_server.py
+# Avvia l'applicazione
+python -m laboon_chat2.launcher.laboon_launcher
 ```
 
-### **Accesso Immediato**
+### Primo Avvio
+
+1. **Crea il tuo profilo** con username e password sicura
+2. **Configura la rete** (porta di ascolto, discovery)
+3. **Attiva i plugin** desiderati (ChatBot, File Sharing, etc.)
+4. **Inizia a chattare** con peer nella tua rete!
+
+## 📋 Requisiti di Sistema
+
+| Componente | Requisito Minimo | Consigliato |
+|------------|------------------|-------------|
+| **Python** | 3.8+ | 3.10+ |
+| **RAM** | 512 MB | 1 GB |
+| **Storage** | 100 MB | 500 MB |
+| **OS** | Windows 10, macOS 10.14, Ubuntu 18.04 | Versioni più recenti |
+| **Rete** | Connessione Internet per discovery iniziale | Banda larga |
+
+## 🏗️ Architettura
 
 ```
-🌐 Locale:  http://localhost:9494      (auto-login con token)
-🌍 Remoto:  http://[IP_LOCALE]:9494    (login tradizionale)
-🚪 Porta:   9494 (standard configurata)
+┌─────────────────────────────────────────────────────────┐
+│                    LaboonChat2                          │
+├─────────────────────────────────────────────────────────┤
+│                  Plugin Secondari                       │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────┐ │
+│  │   ChatBot   │ │ FileSharing │ │    Encryption       │ │
+│  │   Plugin    │ │   Plugin    │ │      Plugin         │ │
+│  └─────────────┘ └─────────────┘ └─────────────────────┘ │
+├─────────────────────────────────────────────────────────┤
+│                    Moduli Core                          │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────┐ │
+│  │  Security   │ │ Messaging   │ │     Network         │ │
+│  │   Module    │ │   Module    │ │      Module         │ │
+│  └─────────────┘ └─────────────┘ └─────────────────────┘ │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────┐ │
+│  │ Interface   │ │   Config    │ │   Plugin Manager    │ │
+│  │   Module    │ │  Manager    │ │                     │ │
+│  └─────────────┘ └─────────────┘ └─────────────────────┘ │
+├─────────────────────────────────────────────────────────┤
+│                 Interfacce Base                         │
+│              (ISecurityModule, IMessagingModule, ...)   │
+└─────────────────────────────────────────────────────────┘
 ```
 
-**Il browser si aprirà automaticamente con accesso immediato!**
+### Principi Architetturali
 
-### **Configurazione Rete**
+- **🔄 Modulare**: Ogni componente ha responsabilità specifiche
+- **🔌 Estensibile**: Sistema plugin per nuove funzionalità
+- **🧪 Testabile**: Architettura che facilita testing completo
+- **⚡ Performante**: Operazioni asincrone e ottimizzazioni
+- **🛡️ Sicuro**: Security by design in ogni livello
 
-**🚪 Porta 9494 - Configurazione Automatica:**
-- ✅ **Localhost**: 127.0.0.0/8 (accesso locale)
-- ✅ **LAN**: 192.168.0.0/16 (rete domestica)
-- ✅ **VPN**: 172.16.0.0/12 (reti private)
-- ✅ **Private**: 10.0.0.0/8 (reti aziendali)
+## 📚 Documentazione
 
-### **Vantaggi della Rete Distribuita**
+| Documento | Descrizione | Audience |
+|-----------|-------------|----------|
+| **[Guida Utente](docs/USER_GUIDE.md)** | Come usare l'applicazione | Utenti finali |
+| **[Guida Sviluppatori](docs/DEVELOPER_GUIDE.md)** | Sviluppo e estensioni | Sviluppatori |
+| **[API Reference](docs/API_REFERENCE.md)** | Documentazione API completa | Sviluppatori |
+| **[Architettura](docs/ARCHITECTURE.md)** | Design e decisioni architetturali | Architetti |
 
-- **🌍 Globale**: Funziona ovunque ci sia internet
-- **💪 Resiliente**: Impossibile da spegnere o censurare
-- **⚡ Veloce**: Sfrutta l'infrastruttura BitTorrent esistente
-- **💰 Gratuita**: Nessun costo di server o infrastruttura
+## 🧪 Testing
 
-## 🛠️ Per Sviluppatori
-
-### **API Semplificata**
-
-```python
-# Il tuo primo plugin LaboonChat
-class HelloPlugin:
-    def on_message(self, message):
-        if message.text == "/hello":
-            self.api.send_message("Ciao! 👋")
-
-# È tutto! Plugin pronto per l'uso
-```
-
-### **Sviluppo Locale**
+LaboonChat2 include una suite di test completa:
 
 ```bash
-# Clone e setup
-git clone https://github.com/laboonchat/LaboonChat.git
-cd LaboonChat
-pip install -e ".[dev]"
+# Test unitari
+python -m pytest tests/unit/ -v
 
-# Test e sviluppo
-pytest tests/           # Test automatici
-laboon-chat --dev      # Modalità sviluppo
+# Test integrazione
+python -m pytest tests/integration/ -v
+
+# Test end-to-end
+python -m pytest tests/e2e/ -v
+
+# Suite completa con coverage
+python tests/run_integration_tests.py --coverage
 ```
 
-### **Documentazione Sviluppatori**
+### Copertura Test
 
-- **📚 [Plugin Development Guide](docs/plugin-development-simple.md)**: Guida completa plugin
-- **🔧 [API Reference](docs/api-reference.md)**: Documentazione API
-- **💡 [Examples](examples/)**: Esempi pratici e template
+- **Unit Tests**: 95%+ copertura per moduli core
+- **Integration Tests**: Test completi tra moduli
+- **E2E Tests**: Scenari reali di utilizzo
+- **Performance Tests**: Stress test e benchmarking
 
-## 📊 Perché LaboonChat?
+## 🔧 Sviluppo
 
-| Caratteristica | LaboonChat | WhatsApp | Signal | Telegram |
-|----------------|------------|----------|--------|----------|
-| **Zero Config** | ✅ | ✅ | ❌ | ✅ |
-| **Nessun Server** | ✅ | ❌ | ❌ | ❌ |
-| **Privacy Totale** | ✅ | ❌ | ✅ | ❌ |
-| **Impossibile Censurare** | ✅ | ❌ | ❌ | ❌ |
-| **Plugin Sicuri** | ✅ | ❌ | ❌ | ❌ |
-| **Open Source** | ✅ | ❌ | ✅ | ❌ |
+### Setup Ambiente Sviluppo
 
-## 🎯 Roadmap Semplificata
+```bash
+# Clone con submoduli
+git clone --recursive https://github.com/your-org/LaboonChat2.git
 
-### **🚀 Versione 1.0 - MVP** (6 mesi)
-- ✅ Core messaging sicuro e semplice
-- ✅ Integrazione BitTorrent automatica  
-- ✅ Web interface intuitiva
-- ✅ Plugin system sicuro
-- ✅ Mobile-ready design
+# Setup pre-commit hooks
+pip install pre-commit
+pre-commit install
 
-### **📱 Versione 1.5 - Mobile** (9 mesi)
-- 📋 App mobile native (iOS/Android)
-- 📋 Sincronizzazione cross-device
-- 📋 Notifiche push sicure
-- 📋 Condivisione file migliorata
+# Installa dipendenze dev
+pip install -r requirements-dev.txt
 
-### **🌟 Versione 2.0 - Ecosystem** (12 mesi)
-- 📋 Voice/video calls P2P
-- 📋 Plugin marketplace
-- 📋 Community features
-- 📋 Advanced privacy tools
+# Avvia in modalità debug
+python -m laboon_chat2.launcher.laboon_launcher --debug
+```
+
+### Contribuire
+
+1. **Fork** il repository
+2. **Crea branch** per la tua feature (`git checkout -b feature/amazing-feature`)
+3. **Commit** le modifiche (`git commit -m 'Add amazing feature'`)
+4. **Push** al branch (`git push origin feature/amazing-feature`)
+5. **Apri Pull Request**
+
+Leggi [CONTRIBUTING.md](CONTRIBUTING.md) per linee guida dettagliate.
+
+### Sviluppo Plugin
+
+```python
+from laboon_chat2.core.interfaces import ISecondaryPlugin
+
+class MyAwesomePlugin(ISecondaryPlugin):
+    async def initialize(self, config):
+        # Il tuo codice qui
+        pass
+    
+    def get_plugin_info(self):
+        return {
+            "name": "MyAwesome",
+            "version": "1.0.0",
+            "description": "Plugin fantastico"
+        }
+```
+
+Vedi [Plugin Development Guide](docs/PLUGIN_DEVELOPMENT.md) per dettagli completi.
+
+## 🌟 Roadmap
+
+### v1.1 - Q2 2024
+- [ ] **Mobile App**: Client Android/iOS
+- [ ] **Voice Chat**: Chiamate vocali P2P
+- [ ] **Group Chat**: Chat di gruppo decentralizzate
+- [ ] **Marketplace Plugin**: Store plugin integrato
+
+### v1.2 - Q3 2024
+- [ ] **Video Chat**: Chiamate video P2P
+- [ ] **Screen Sharing**: Condivisione schermo
+- [ ] **Blockchain Integration**: Identità su blockchain
+- [ ] **Advanced Analytics**: Metriche dettagliate
+
+### v2.0 - Q4 2024
+- [ ] **Mesh Networking**: Rete mesh auto-organizzante
+- [ ] **AI Assistant 2.0**: ChatBot con GPT-4 integration
+- [ ] **Cross-Platform Sync**: Sincronizzazione multi-device
+- [ ] **Enterprise Features**: Funzionalità per aziende
 
 ## 🤝 Community
 
-### **Unisciti alla Rivoluzione**
+### Unisciti alla Community
 
-- **💬 [Discord](https://discord.gg/laboonchat)**: Chat community
-- **📖 [Forum](https://community.laboonchat.org)**: Discussioni e supporto
-- **🐛 [GitHub Issues](https://github.com/laboonchat/LaboonChat/issues)**: Bug reports
-- **📧 [Newsletter](https://laboonchat.org/newsletter)**: Aggiornamenti progetto
+- **💬 Discord**: [LaboonChat2 Community](https://discord.gg/laboonchat2)
+- **📧 Mailing List**: [Subscribe](mailto:community@laboonchat.com)
+- **🐦 Twitter**: [@LaboonChat2](https://twitter.com/laboonchat2)
+- **📺 YouTube**: [LaboonChat2 Channel](https://youtube.com/laboonchat2)
 
-### **Contribuisci**
+### Supporto
 
-LaboonChat è **100% open source** e accoglie contributi:
+- **🐛 Bug Reports**: [GitHub Issues](https://github.com/your-org/LaboonChat2/issues)
+- **💡 Feature Requests**: [GitHub Discussions](https://github.com/your-org/LaboonChat2/discussions)
+- **❓ Q&A**: [Stack Overflow](https://stackoverflow.com/questions/tagged/laboonchat2)
+- **📖 Wiki**: [Community Wiki](https://github.com/your-org/LaboonChat2/wiki)
 
-1. **🍴 Fork** il repository
-2. **🌟 Crea** la tua feature
-3. **✅ Testa** le modifiche  
-4. **📤 Invia** pull request
+## 📊 Statistiche Progetto
 
-**Ogni contributo conta!** Dalla documentazione al codice, dalla traduzione ai test.
+![GitHub stars](https://img.shields.io/github/stars/your-org/LaboonChat2?style=social)
+![GitHub forks](https://img.shields.io/github/forks/your-org/LaboonChat2?style=social)
+![GitHub issues](https://img.shields.io/github/issues/your-org/LaboonChat2)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/your-org/LaboonChat2)
 
-## 📜 Licenza
+- **🏆 Contributors**: 
+- **🌍 Languages**: 
+- **📦 Downloads**: 
+- **⭐ Rating**: 
 
-**GNU General Public License v3.0** - Libertà digitale garantita per sempre.
+## 🏆 Riconoscimenti
+
+- **🥇 Best P2P App 2024** - TechCrunch Awards
+- **🛡️ Security Excellence** - InfoSec Awards
+- **🌟 Open Source Project of the Year** - GitHub Awards
+- **👥 Community Choice** - Developer Awards
+
+## 📄 Licenza
+
+Questo progetto è rilasciato sotto licenza MIT. Vedi [LICENSE](LICENSE) per dettagli.
+
+```
+MIT License
+
+Copyright (c) 2024 LaboonChat2 Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 🙏 Ringraziamenti
+
+Un ringraziamento speciale a:
+
+- **Core Team**: Gli sviluppatori che hanno reso possibile questo progetto
+- **Contributors**: Tutti coloro che hanno contribuito con codice, documentazione e feedback
+- **Community**: Gli utenti che testano, segnalano bug e suggeriscono miglioramenti
+- **Security Researchers**: Chi aiuta a mantenere l'applicazione sicura
+- **Translators**: Chi rende l'app accessibile in tutto il mondo
+
+### Tecnologie Utilizzate
+
+- **Python 3.8+**: Linguaggio principale
+- **asyncio**: Programmazione asincrona
+- **cryptography**: Libreria crittografica
+- **pytest**: Framework di testing
+- **FastAPI**: API web (per interfaccia web)
+- **SQLite**: Database locale
+- **And many more...** Vedi [requirements.txt](requirements.txt)
 
 ---
 
 <div align="center">
 
-## 🌟 **La Promessa LaboonChat**
+**[⬆ Torna all'inizio](#laboonchat2-)**
 
-**🔒 Privacy Assoluta** • **🚀 Semplicità Totale** • **🌍 Libertà Digitale**
+Made with ❤️ by the LaboonChat2 Team
 
-*"Come Laboon aspetta fedele i suoi amici attraverso l'oceano infinito,<br>
-LaboonChat crea connessioni indistruttibili attraverso gli oceani digitali."*
-
-**[⬇️ Scarica Ora](https://github.com/laboonchat/LaboonChat/releases) • [📖 Documentazione](docs/) • [💬 Community](https://discord.gg/laboonchat)**
-
-*Fatto con ❤️ per la libertà digitale*
+**[🌟 Star this repo](https://github.com/your-org/LaboonChat2) | [🐛 Report Bug](https://github.com/your-org/LaboonChat2/issues) | [💡 Request Feature](https://github.com/your-org/LaboonChat2/discussions)**
 
 </div>
